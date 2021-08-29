@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            font-family: 'Kaisei HarunoUmi', serif;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        a {
+            color: #000;
+            border: 0.15rem solid #000;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            text-decoration: none;
+        }
+        a:hover {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!!! by bomb</h1>
+    <div class="flex-container">
+        <h1>Hello,I'm PanyawatK :)</h1>
+        <h2>I'm a newbie in the programming world.</h2>
+    </div>
+
+    <div class="box-flex-container">
+        <a href="https://github.com/pufferbommy">My Github</a>
+        <a href="https://twitter.com/pufferbommy">My Twitter</a>
+    </div>
+
 </body>
 </html>
