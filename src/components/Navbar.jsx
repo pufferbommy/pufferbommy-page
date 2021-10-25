@@ -1,5 +1,6 @@
 import React from 'react'
 import Sun from '../images/sun.png'
+import FootPrint from '../images/footprint-dark.png'
 
 const Navbar = () => {
     return (
@@ -7,7 +8,7 @@ const Navbar = () => {
             <div className="flex ml-1 gap-2 group cursor-pointer">
                 <img
                     className="w-5 object-contain duration-100 group-hover:rotate-12"
-                    src="/src/images/footprint-dark.png"
+                    src={FootPrint}
                 />
                 <h1 className="text-white text-xl font-semibold">
                     Panyawat Kaedpol
