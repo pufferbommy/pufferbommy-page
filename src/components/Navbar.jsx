@@ -3,7 +3,7 @@ import Sun from '../images/sun.png'
 
 const Navbar = () => {
     return (
-        <div className="sticky top-0 flex justify-between md:max-w-3xl md:mx-auto items-center bg-transparent p-4">
+        <div className="sticky top-0 flex justify-between md:max-w-3xl md:mx-auto items-center p-4">
             <h1 className="text-white text-xl font-semibold">
                 Panyawat Kaedpol
             </h1>
