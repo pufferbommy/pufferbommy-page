@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
 const useTheme = () => {
-    localStorage.theme === 'undefined'
-        ? localStorage.setItem('theme', 'dark')
-        : ''
     const [theme, setTheme] = useState(localStorage.theme)
     const nextTheme = theme === 'dark' ? 'light' : 'dark'
     useEffect(() => {
