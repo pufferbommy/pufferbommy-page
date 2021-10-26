@@ -3,16 +3,11 @@ import Cat from '../images/cat.png'
 import Github from '../images/github.png'
 
 const Content = () => {
-    const [count, setCount] = useState(0)
-
     return (
         <div className="flex flex-col items-center w-screen">
             <div className="max-w-md flex flex-col md:max-w-lg">
                 {/* Big Image and Mini Game*/}
-                <div onClick={() => setCount(count + 1)} className="my-4">
-                    <p className="text-xs relative left-64 text-gray-500">
-                        {count}
-                    </p>
+                <div className="my-4">
                     <img
                         className=" mx-auto w-1/2 cursor-pointer hover:animate-spin"
                         src={Cat}
