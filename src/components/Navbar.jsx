@@ -13,8 +13,8 @@ const Navbar = ({ nextTheme, setTheme }) => {
             : 'bg-yellow-200 hover:bg-yellow-300'
 
     return (
-        <nav className="fixed top-0 bg-blue-100 dark:bg-gray-800 backdrop-blur-md dark:bg-opacity-50 bg-opacity-25 w-full flex flex-row justify-between md:justify-center md:gap-36 items-center p-1.5">
-            <div className="flex ml-1 gap-2 group cursor-pointer">
+        <nav className="fixed top-0 bg-blue-100 dark:bg-gray-800 backdrop-blur-md dark:bg-opacity-50 bg-opacity-25 w-full flex flex-row justify-between md:justify-center md:gap-36 items-center p-2">
+            <div className="flex items-center ml-1 gap-2 group cursor-pointer">
                 <img
                     className="w-5 object-contain duration-100 group-hover:rotate-12"
                     src={setFootPrint}
