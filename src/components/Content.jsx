@@ -8,7 +8,7 @@ const Content = ({ nextTheme }) => {
             ? 'https://image.flaticon.com/icons/png/512/25/25231.png'
             : Github
     return (
-        <div className="flex flex-col items-center w-screen">
+        <div className="mt-16 flex flex-col items-center w-screen">
             <div className="max-w-md flex flex-col md:max-w-lg">
                 {/* Big Image */}
                 <div className="my-4">
@@ -21,7 +21,7 @@ const Content = ({ nextTheme }) => {
                 </div>
                 {/* Intro */}
                 <div>
-                    <h1 className="text-black dark:text-white px-10 text-center bg-gray-200 dark:bg-gray-800 rounded-lg py-4">
+                    <h1 className="font-medium text-black dark:text-white px-10 text-center bg-gray-100 dark:bg-gray-800 rounded-lg py-4">
                         Hello, I&#39;m a newbie developer based in Thailand!
                     </h1>
                     <h2 className="text-black text-3xl mt-4 font-extrabold dark:text-white">
@@ -93,7 +93,7 @@ const Content = ({ nextTheme }) => {
                     <button
                         // Alert before edit
                         onClick={() => alert('Unavailable')}
-                        className="bg-blue-200 mt-4 hover:bg-blue-300 duration-300 px-6 py-2 rounded-lg"
+                        className="bg-blue-100 mt-4 hover:bg-blue-200 duration-300 px-6 py-2 rounded-lg"
                     >
                         My portfolio&nbsp;{'>'}
                     </button>
@@ -120,7 +120,7 @@ const Content = ({ nextTheme }) => {
                             href="https://github.com/pufferbommy"
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 rounded-md"
+                            className="underline-gap hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 hover:underline rounded-md"
                         >
                             <img
                                 className="ml-3 inline w-5"
@@ -135,7 +135,7 @@ const Content = ({ nextTheme }) => {
                             href="https://twitter.com/pufferbommy"
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 rounded-md"
+                            className="underline-gap hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 hover:underline rounded-md"
                         >
                             <img
                                 className="ml-3 inline w-5"
@@ -150,7 +150,7 @@ const Content = ({ nextTheme }) => {
                             href="https://www.instagram.com/pufferbommy/"
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 rounded-md"
+                            className="underline-gap hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200  rounded-md hover:underline"
                         >
                             <img
                                 className="ml-3 inline w-5 opacity-75"

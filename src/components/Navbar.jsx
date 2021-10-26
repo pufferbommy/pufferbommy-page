@@ -5,19 +5,19 @@ import FootPrintDark from '../images/footprint-dark.png'
 import FootPrint from '../images/footprint.png'
 
 const Navbar = ({ nextTheme, setTheme }) => {
-    const setCatImage = nextTheme === 'dark' ? FootPrint : FootPrintDark
+    const setFootPrint = nextTheme === 'dark' ? FootPrint : FootPrintDark
     const setMenuTheme = nextTheme === 'dark' ? Moon : Sun
     const setMenuBackground =
         nextTheme === 'dark'
-            ? 'bg-purple-200 hover:bg-purple-400'
-            : 'bg-yellow-200 hover:bg-yellow-400'
+            ? 'bg-purple-200 hover:bg-purple-300'
+            : 'bg-yellow-200 hover:bg-yellow-300'
 
     return (
-        <div className="flex flex-row justify-between md:justify-center md:gap-36 items-center p-4">
+        <nav className="fixed top-0 bg-blue-100 dark:bg-gray-800 backdrop-blur-md dark:bg-opacity-50 bg-opacity-25 w-full flex flex-row justify-between md:justify-center md:gap-36 items-center p-1.5">
             <div className="flex ml-1 gap-2 group cursor-pointer">
                 <img
                     className="w-5 object-contain duration-100 group-hover:rotate-12"
-                    src={setCatImage}
+                    src={setFootPrint}
                 />
                 <h1 className="dark:text-white text-black text-xl font-semibold">
                     Panyawat Kaedpol
@@ -33,7 +33,7 @@ const Navbar = ({ nextTheme, setTheme }) => {
                     </a>
                 </div>
             </div>
-            <div className="flex gap-2 h-10">
+            <div className="flex h-10 gap-2">
                 <div
                     onClick={() => setTheme(nextTheme)}
                     className={`rounded-md duration-300 hover:cursor-pointer ${setMenuBackground}`}
@@ -43,16 +43,16 @@ const Navbar = ({ nextTheme, setTheme }) => {
                         className="w-full h-full"
                         draggable="false"
                         src={setMenuTheme}
-                        alt=""
+                        alt="darkMode And LightMode"
                     />
                 </div>
-                <div className="border p-3 rounded-md duration-300 border-gray-500 hover:bg-gray-700 hover:cursor-pointer md:hidden">
-                    <div className="border-b-2 rounded border-gray-200 w-4"></div>
-                    <div className="border-b-2 my-1 rounded border-gray-200 w-4"></div>
-                    <div className="border-b-2 rounded border-gray-200 w-4"></div>
+                <div className="border p-3 rounded-md duration-300 border-gray-400 drak:border-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 hover:cursor-pointer md:hidden">
+                    <div className="border-b-2 rounded border-gray-600 dark:border-gray-200 w-4"></div>
+                    <div className="border-b-2 my-1 rounded border-gray-600 dark:border-gray-200 w-4"></div>
+                    <div className="border-b-2 rounded border-gray-600 dark:border-gray-200 w-4"></div>
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
 
