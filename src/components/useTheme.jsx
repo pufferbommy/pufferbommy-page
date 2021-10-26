@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-
 const useTheme = () => {
-    const [theme, setTheme] = useState(localStorage.theme)
+    const defualtTheme = 'dark'
+    const [theme, setTheme] = useState((localStorage.theme = defualtTheme))
     const nextTheme = theme === 'dark' ? 'light' : 'dark'
     useEffect(() => {
         const rootElem = window.document.documentElement
