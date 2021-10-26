@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Cat from '../images/cat.png'
 import Github from '../images/github.png'
 
