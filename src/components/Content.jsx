@@ -2,11 +2,15 @@ import React from 'react'
 import Cat from '../images/cat.png'
 import Github from '../images/github.png'
 
-const Content = () => {
+const Content = ({ nextTheme }) => {
+    const setGithubImage =
+        nextTheme === 'dark'
+            ? 'https://image.flaticon.com/icons/png/512/25/25231.png'
+            : Github
     return (
         <div className="flex flex-col items-center w-screen">
             <div className="max-w-md flex flex-col md:max-w-lg">
-                {/* Big Image and Mini Game*/}
+                {/* Big Image */}
                 <div className="my-4">
                     <img
                         className=" mx-auto w-1/2 cursor-pointer hover:animate-spin"
@@ -17,23 +21,23 @@ const Content = () => {
                 </div>
                 {/* Intro */}
                 <div>
-                    <h1 className="text-white px-10 text-center bg-gray-800 rounded-lg py-4">
+                    <h1 className="text-black dark:text-white px-10 text-center bg-gray-200 dark:bg-gray-800 rounded-lg py-4">
                         Hello, I&#39;m a newbie developer based in Thailand!
                     </h1>
-                    <h2 className="text-white text-3xl mt-4 font-extrabold">
+                    <h2 className="text-black text-3xl mt-4 font-extrabold dark:text-white">
                         Panyawat Kaedpol
                     </h2>
-                    <p className="text-white text-sm mt-1">
+                    <p className="text-black dark:text-white text-sm mt-1">
                         ( Developer / Designer / Traveller )
                     </p>
                 </div>
 
                 {/* Bio */}
                 <div className="flex flex-col">
-                    <h1 className="text-white border-b-4 border-gray-500 w-8 text-xl font-bold mt-10">
+                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-8 text-xl font-bold mt-10">
                         Bio
                     </h1>
-                    <div className="text-white leading-6 tracking-wider text-sm mt-2">
+                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
                         <span>
                             <span className="font-semibold">2001</span>
                             &nbsp;&nbsp;&nbsp;&nbsp;Born in Phutthalung,
@@ -49,10 +53,10 @@ const Content = () => {
                 </div>
                 {/* Skills */}
                 <div className="flex flex-col">
-                    <h1 className="text-white border-b-4 border-gray-500 w-12 text-xl font-bold mt-10">
+                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-12 text-xl font-bold mt-10">
                         Skills
                     </h1>
-                    <div className="text-white leading-6 tracking-wider text-sm mt-2">
+                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
                         <p>
                             <span className="uppercase font-semibold">
                                 Languages:&nbsp;
@@ -80,10 +84,10 @@ const Content = () => {
                 </div>
                 {/* Work */}
                 <div className="flex flex-col items-start">
-                    <h1 className="text-white border-b-4 border-gray-500 w-12 text-xl font-bold mt-10">
+                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-12 text-xl font-bold mt-10">
                         Work
                     </h1>
-                    <p className="text-white leading-6 tracking-wider text-sm mt-2">
+                    <p className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
                         &nbsp;&nbsp;&nbsp;&nbsp;I don&#39;t have job....
                     </p>
                     <button
@@ -96,10 +100,10 @@ const Content = () => {
                 </div>
                 {/* I love */}
                 <div className="flex flex-col">
-                    <h1 className="text-white border-b-4 border-gray-500 w-6 text-xl font-bold mt-12">
+                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-6 text-xl font-bold mt-12">
                         I ♥
                     </h1>
-                    <div className="text-white leading-6 tracking-wider text-sm mt-2">
+                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
                         <span>
                             &nbsp;&nbsp;&nbsp;&nbsp;Coding, Music, Art, Singing,
                             Learning, Travelling
@@ -108,17 +112,20 @@ const Content = () => {
                 </div>
                 {/* Social Media */}
                 <div className="flex flex-col mt-12">
-                    <h1 className="text-white border-b-4 border-gray-500 w-28 text-xl font-bold">
+                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-28 text-xl font-bold">
                         On the web
                     </h1>
-                    <div className="text-white leading-6 tracking-wider text-sm mt-5">
+                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-5">
                         <a
                             href="https://github.com/pufferbommy"
                             target="_blank"
                             rel="noreferrer"
                             className="hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 rounded-md"
                         >
-                            <img className="ml-3 inline w-5" src={Github} />
+                            <img
+                                className="ml-3 inline w-5"
+                                src={setGithubImage}
+                            />
                             <span className="mx-3 text-blue-400">
                                 @pufferbommy
                             </span>

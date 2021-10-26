@@ -3,11 +3,11 @@ import Content from '../components/Content'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
-const Home = () => {
+const Home = ({ nextTheme, setTheme }) => {
     return (
         <div>
-            <Navbar />
-            <Content />
+            <Navbar nextTheme={nextTheme} setTheme={setTheme} />
+            <Content nextTheme={nextTheme} />
             <Footer />
         </div>
     )

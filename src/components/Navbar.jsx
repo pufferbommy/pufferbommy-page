@@ -1,16 +1,19 @@
 import React from 'react'
 import Sun from '../images/sun.png'
-import FootPrint from '../images/footprint-dark.png'
+import FootPrintDark from '../images/footprint-dark.png'
+import FootPrint from '../images/footprint.png'
 
-const Navbar = () => {
+const Navbar = ({ nextTheme, setTheme }) => {
+    const setCatImage = nextTheme === 'dark' ? FootPrint : FootPrintDark
+
     return (
         <div className="flex flex-row justify-between md:justify-center md:gap-36 items-center p-4">
             <div className="flex ml-1 gap-2 group cursor-pointer">
                 <img
                     className="w-5 object-contain duration-100 group-hover:rotate-12"
-                    src={FootPrint}
+                    src={setCatImage}
                 />
-                <h1 className="text-white text-xl font-semibold">
+                <h1 className="dark:text-white text-black text-xl font-semibold">
                     Panyawat Kaedpol
                 </h1>
             </div>
@@ -19,14 +22,14 @@ const Navbar = () => {
                     onClick={() => alert('Unavailable')}
                     className="flex gap-4 "
                 >
-                    <a className="underline-gap text-white hover:underline">
+                    <a className="underline-gap text-black dark:text-white hover:underline">
                         Works
                     </a>
                 </div>
             </div>
             <div className="flex gap-2 h-10">
                 <div
-                    onClick={() => alert('Unavailable')}
+                    onClick={() => setTheme(nextTheme)}
                     className="rounded-md duration-300 bg-yellow-200 hover:bg-yellow-400 hover:cursor-pointer"
                 >
                     <img
