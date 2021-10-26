@@ -1,10 +1,16 @@
 import React from 'react'
 import Sun from '../images/sun.png'
+import Moon from '../images/moon.png'
 import FootPrintDark from '../images/footprint-dark.png'
 import FootPrint from '../images/footprint.png'
 
 const Navbar = ({ nextTheme, setTheme }) => {
     const setCatImage = nextTheme === 'dark' ? FootPrint : FootPrintDark
+    const setMenuTheme = nextTheme === 'dark' ? Moon : Sun
+    const setMenuBackground =
+        nextTheme === 'dark'
+            ? 'bg-purple-200 hover:bg-purple-400'
+            : 'bg-yellow-200 hover:bg-yellow-400'
 
     return (
         <div className="flex flex-row justify-between md:justify-center md:gap-36 items-center p-4">
@@ -30,12 +36,13 @@ const Navbar = ({ nextTheme, setTheme }) => {
             <div className="flex gap-2 h-10">
                 <div
                     onClick={() => setTheme(nextTheme)}
-                    className="rounded-md duration-300 bg-yellow-200 hover:bg-yellow-400 hover:cursor-pointer"
+                    className={`rounded-md duration-300 hover:cursor-pointer ${setMenuBackground}`}
                 >
                     <img
-                        className="scale-50 w-full h-full"
+                        style={{ transform: 'scale(0.425)' }}
+                        className="w-full h-full"
                         draggable="false"
-                        src={Sun}
+                        src={setMenuTheme}
                         alt=""
                     />
                 </div>
