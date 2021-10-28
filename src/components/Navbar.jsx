@@ -1,8 +1,7 @@
 import React from 'react'
-import Sun from '../images/sun.png'
-import Moon from '../images/moon.png'
-import FootPrintDark from '../images/footprint-dark.png'
-import FootPrint from '../images/footprint.png'
+import PropTypes from 'prop-types'
+
+import { Sun, Moon, FootPrintDark, FootPrint } from '../images'
 
 const Navbar = ({ nextTheme, setTheme }) => {
     const setFootPrint = nextTheme === 'dark' ? FootPrint : FootPrintDark
@@ -54,6 +53,11 @@ const Navbar = ({ nextTheme, setTheme }) => {
             </div>
         </nav>
     )
+}
+
+Navbar.propTypes = {
+    nextTheme: PropTypes.func,
+    setTheme: PropTypes.func,
 }
 
 export default Navbar
