@@ -8,13 +8,14 @@ const Navbar = ({ nextTheme, setTheme }) => {
     const setMenuTheme = nextTheme === 'dark' ? Moon : Sun
     const setMenuBackground =
         nextTheme === 'dark'
-            ? 'bg-purple-200 hover:bg-purple-300'
+            ? 'bg-purple-300 hover:bg-purple-400'
             : 'bg-yellow-200 hover:bg-yellow-300'
 
     return (
-        <nav className="fixed top-0 bg-blue-100 dark:bg-gray-800 backdrop-blur-md dark:bg-opacity-50 bg-opacity-25 w-full flex flex-row justify-between md:justify-center md:gap-36 items-center p-2">
+        <nav className="z-[1] fixed top-0 bg-white border-b border-gray-300 dark:border-none dark:bg-gray-800 backdrop-blur-md dark:bg-opacity-50 bg-opacity-25 w-full flex flex-row justify-between md:justify-center md:gap-36 items-center p-2">
             <div className="flex items-center ml-1 gap-2 group cursor-pointer">
                 <img
+                    draggable="true"
                     className="w-5 object-contain duration-100 group-hover:rotate-12"
                     src={setFootPrint}
                 />

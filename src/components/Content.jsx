@@ -1,6 +1,7 @@
 import React from 'react'
-import Cat from '../images/cat.png'
-import Github from '../images/github.png'
+import PropTypes from 'prop-types'
+
+import { Cat, Github } from '../images'
 
 const Content = ({ nextTheme }) => {
     const setGithubImage =
@@ -13,7 +14,7 @@ const Content = ({ nextTheme }) => {
                 {/* Big Image */}
                 <div className="my-4">
                     <img
-                        className=" mx-auto w-1/2 cursor-pointer hover:animate-spin"
+                        className="mx-auto w-1/2 cursor-pointer duration-300 scale-90 hover:scale-95"
                         src={Cat}
                         alt="cat"
                         draggable="false"
@@ -21,14 +22,14 @@ const Content = ({ nextTheme }) => {
                 </div>
                 {/* Intro */}
                 <div>
-                    <h1 className="font-medium text-black dark:text-white px-10 text-center bg-gray-100 dark:bg-gray-800 rounded-lg py-4">
+                    <h1 className="font-medium text-black dark:text-white px-10 text-center bg-gray-200 dark:bg-gray-800 rounded-lg py-4">
                         Hello, I&#39;m a newbie developer based in Thailand!
                     </h1>
                     <h2 className="text-black text-3xl mt-4 font-extrabold dark:text-white">
                         Panyawat Kaedpol
                     </h2>
                     <p className="text-black dark:text-white text-sm mt-1">
-                        ( Developer / Designer / Traveller )
+                        I&#39;m 19 years old and you can call me Bom
                     </p>
                 </div>
 
@@ -93,7 +94,7 @@ const Content = ({ nextTheme }) => {
                     <button
                         // Alert before edit
                         onClick={() => alert('Unavailable')}
-                        className="bg-blue-100 mt-4 hover:bg-blue-200 duration-300 px-6 py-2 rounded-lg"
+                        className="bg-blue-300 mt-4 hover:bg-blue-400 duration-300 px-6 py-2 rounded-lg"
                     >
                         My portfolio&nbsp;{'>'}
                     </button>
@@ -120,13 +121,13 @@ const Content = ({ nextTheme }) => {
                             href="https://github.com/pufferbommy"
                             target="_blank"
                             rel="noreferrer"
-                            className="underline-gap hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 hover:underline rounded-md"
+                            className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800 hover:underline rounded-md"
                         >
                             <img
                                 className="ml-3 inline w-5"
                                 src={setGithubImage}
                             />
-                            <span className="mx-3 text-blue-400">
+                            <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
                                 @pufferbommy
                             </span>
                         </a>
@@ -135,13 +136,13 @@ const Content = ({ nextTheme }) => {
                             href="https://twitter.com/pufferbommy"
                             target="_blank"
                             rel="noreferrer"
-                            className="underline-gap hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200 hover:underline rounded-md"
+                            className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800 hover:underline rounded-md"
                         >
                             <img
                                 className="ml-3 inline w-5"
                                 src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/172px-Twitter_bird_logo_2012.svg.png"
                             />
-                            <span className="mx-3 text-blue-400">
+                            <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
                                 @pufferbommy
                             </span>
                         </a>
@@ -150,13 +151,13 @@ const Content = ({ nextTheme }) => {
                             href="https://www.instagram.com/pufferbommy/"
                             target="_blank"
                             rel="noreferrer"
-                            className="underline-gap hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-25 hover:bg-green-200  rounded-md hover:underline"
+                            className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800  rounded-md hover:underline"
                         >
                             <img
                                 className="ml-3 inline w-5 opacity-75"
                                 src="https://logosarchive.com/wp-content/uploads/2021/07/Instagram-logo-icon.png"
                             />
-                            <span className="mx-3 text-blue-400">
+                            <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
                                 @pufferbommy
                             </span>
                         </a>
@@ -165,6 +166,10 @@ const Content = ({ nextTheme }) => {
             </div>
         </div>
     )
+}
+
+Content.propTypes = {
+    nextTheme: PropTypes.func,
 }
 
 export default Content
