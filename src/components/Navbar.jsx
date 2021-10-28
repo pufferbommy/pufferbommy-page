@@ -24,10 +24,7 @@ const Navbar = ({ nextTheme, setTheme }) => {
                 </h1>
             </div>
             <div className="hidden md:inline-block md:top-0.5 md:relative md:right-32 cursor-pointer">
-                <div
-                    onClick={() => alert('Unavailable')}
-                    className="flex gap-4 "
-                >
+                <div onClick={() => alert('Unavailable')} className="flex gap-4 ">
                     <a className="underline-gap text-black dark:text-white hover:underline">
                         Works
                     </a>
