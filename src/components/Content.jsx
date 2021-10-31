@@ -26,7 +26,7 @@ const Content = ({ nextTheme }) => {
                         Hello, I&#39;m a newbie developer based in Thailand!
                     </h1>
                     <h2 className="text-black text-3xl mt-4 font-extrabold dark:text-white">
-                        Panyawat Kaedpol
+                        Panyawat&nbsp;Kaedpol
                     </h2>
                     <p className="text-black dark:text-white text-sm mt-1">
                         I&#39;m 19 years old and you can call me Bom
@@ -41,14 +41,13 @@ const Content = ({ nextTheme }) => {
                     <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
                         <span>
                             <span className="font-semibold">2001</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Born in Phutthalung,
-                            Thailand.
+                            &nbsp;&nbsp;&nbsp;&nbsp;Born in Phutthalung, Thailand.
                         </span>
                         <br />
                         <span>
                             <span className="font-semibold">2021</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;I&#39;m currenly in my
-                            second year studying computer science.
+                            &nbsp;&nbsp;&nbsp;&nbsp;I&#39;m currenly in my second
+                            year studying computer science.
                         </span>
                     </div>
                 </div>
@@ -62,9 +61,7 @@ const Content = ({ nextTheme }) => {
                             <span className="uppercase font-semibold">
                                 Languages:&nbsp;
                             </span>
-                            <span>
-                                Javascript(ES6), HTML5, CSS3, Java and C++
-                            </span>
+                            <span>Javascript(ES6), HTML5, CSS3, Java and C++</span>
                         </p>
                         <p>
                             <span className="uppercase font-semibold">
@@ -77,8 +74,8 @@ const Content = ({ nextTheme }) => {
                                 Tools:&nbsp;
                             </span>
                             <span>
-                                VSCode, Git & Github, Command Line, Adobe
-                                Photoshop, Figma
+                                VSCode, Git & Github, Command Line, Adobe Photoshop,
+                                Figma
                             </span>
                         </p>
                     </div>
@@ -123,10 +120,7 @@ const Content = ({ nextTheme }) => {
                             rel="noreferrer"
                             className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800 hover:underline rounded-md"
                         >
-                            <img
-                                className="ml-3 inline w-5"
-                                src={setGithubImage}
-                            />
+                            <img className="ml-3 inline w-5" src={setGithubImage} />
                             <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
                                 @pufferbommy
                             </span>
@@ -169,7 +163,7 @@ const Content = ({ nextTheme }) => {
 }
 
 Content.propTypes = {
-    nextTheme: PropTypes.func,
+    nextTheme: PropTypes.string,
 }
 
 export default Content

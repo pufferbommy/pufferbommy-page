@@ -54,7 +54,7 @@ const Navbar = ({ nextTheme, setTheme }) => {
 }
 
 Navbar.propTypes = {
-    nextTheme: PropTypes.func,
+    nextTheme: PropTypes.string,
     setTheme: PropTypes.func,
 }
 

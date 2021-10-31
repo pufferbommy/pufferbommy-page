@@ -16,7 +16,7 @@ const Home = ({ nextTheme, setTheme }) => {
 }
 
 Home.propTypes = {
-    nextTheme: PropTypes.func,
+    nextTheme: PropTypes.string,
     setTheme: PropTypes.func,
 }
 
