@@ -30,10 +30,10 @@ const Content = () => {
         </h2>
       </div>
       <div className="flex flex-col gap-2">
-        <h2 className="text-black text-3xl mt-4 text-center xs:text-left font-bold dark:text-white">
+        <h2 className="text-black text-2xl mt-4 text-center xs:text-left font-bold dark:text-white">
           Panyawat Kaedpol
         </h2>
-        <p className="text-black ml-0 sm:ml-4 text-center xs:text-left dark:text-white text-sm">
+        <p className="text-black ml-0 sm:ml-4 text-center xs:text-left dark:text-white">
           I'm {new Date().getFullYear() - 2001} years old and you can call me
           Bomb.
         </p>
