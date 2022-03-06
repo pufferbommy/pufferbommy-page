@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.underline-gap:hover {
+  text-underline-offset: 0.25rem;
+}
+
+html.dark {
+  @apply bg-gray-900;
+}
+
+html.light {
+  @apply bg-white;
+}

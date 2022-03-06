@@ -1,169 +1,113 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { RiGithubFill, RiTwitterFill, RiInstagramFill } from 'react-icons/ri'
+import SocialItem from './SocialItem'
+import TopicHeading from './TopicHeading'
+import { Fragment, useState } from 'react'
+import Cat from '../images/cat.png'
+import { motion } from 'framer-motion'
 
-import { Cat, Github } from '../images'
-
-const Content = ({ nextTheme }) => {
-    const setGithubImage =
-        nextTheme === 'dark'
-            ? 'https://image.flaticon.com/icons/png/512/25/25231.png'
-            : Github
-    return (
-        <div className="mt-16 flex flex-col items-center w-screen">
-            <div className="max-w-md flex flex-col md:max-w-lg">
-                {/* Big Image */}
-                <div className="my-4">
-                    <img
-                        className="mx-auto w-1/2 cursor-pointer duration-300 scale-90 hover:scale-95"
-                        src={Cat}
-                        alt="cat"
-                        draggable="false"
-                    />
-                </div>
-                {/* Intro */}
-                <div>
-                    <h1 className="font-medium text-black dark:text-white px-10 text-center bg-gray-200 dark:bg-gray-800 rounded-lg py-4">
-                        Hello, I&#39;m a newbie developer based in Thailand!
-                    </h1>
-                    <h2 className="text-black text-3xl mt-4 font-extrabold dark:text-white">
-                        Panyawat&nbsp;Kaedpol
-                    </h2>
-                    <p className="text-black dark:text-white text-sm mt-1">
-                        I&#39;m 19 years old and you can call me Bom
-                    </p>
-                </div>
-
-                {/* Bio */}
-                <div className="flex flex-col">
-                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-8 text-xl font-bold mt-10">
-                        Bio
-                    </h1>
-                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
-                        <span>
-                            <span className="font-semibold">2001</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Born in Phutthalung, Thailand.
-                        </span>
-                        <br />
-                        <span>
-                            <span className="font-semibold">2021</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;I&#39;m currenly in my second
-                            year studying computer science.
-                        </span>
-                    </div>
-                </div>
-                {/* Skills */}
-                <div className="flex flex-col">
-                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-12 text-xl font-bold mt-10">
-                        Skills
-                    </h1>
-                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
-                        <p>
-                            <span className="uppercase font-semibold">
-                                Languages:&nbsp;
-                            </span>
-                            <span>Javascript(ES6), HTML5, CSS3, Java and C++</span>
-                        </p>
-                        <p>
-                            <span className="uppercase font-semibold">
-                                Libraries & Frameworks:&nbsp;
-                            </span>
-                            <span>React, Vue, Tailwind</span>
-                        </p>
-                        <p>
-                            <span className="uppercase font-semibold">
-                                Tools:&nbsp;
-                            </span>
-                            <span>
-                                VSCode, Git & Github, Command Line, Adobe Photoshop,
-                                Figma
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                {/* Work */}
-                <div className="flex flex-col items-start">
-                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-12 text-xl font-bold mt-10">
-                        Work
-                    </h1>
-                    <p className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
-                        &nbsp;&nbsp;&nbsp;&nbsp;I don&#39;t have job....
-                    </p>
-                    <button
-                        // Alert before edit
-                        onClick={() => alert('Unavailable')}
-                        className="bg-blue-300 mt-4 hover:bg-blue-400 duration-300 px-6 py-2 rounded-lg"
-                    >
-                        My portfolio&nbsp;{'>'}
-                    </button>
-                </div>
-                {/* I love */}
-                <div className="flex flex-col">
-                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-6 text-xl font-bold mt-12">
-                        I ♥
-                    </h1>
-                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-2">
-                        <span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Coding, Music, Art, Singing,
-                            Learning, Travelling
-                        </span>
-                    </div>
-                </div>
-                {/* Social Media */}
-                <div className="flex flex-col mt-12">
-                    <h1 className="text-black dark:text-white border-b-4 border-gray-500 w-28 text-xl font-bold">
-                        On the web
-                    </h1>
-                    <div className="text-black dark:text-white leading-6 tracking-wider text-sm mt-5">
-                        <a
-                            href="https://github.com/pufferbommy"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800 hover:underline rounded-md"
-                        >
-                            <img className="ml-3 inline w-5" src={setGithubImage} />
-                            <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
-                                @pufferbommy
-                            </span>
-                        </a>
-                        <br />
-                        <a
-                            href="https://twitter.com/pufferbommy"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800 hover:underline rounded-md"
-                        >
-                            <img
-                                className="ml-3 inline w-5"
-                                src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/172px-Twitter_bird_logo_2012.svg.png"
-                            />
-                            <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
-                                @pufferbommy
-                            </span>
-                        </a>
-                        <br />
-                        <a
-                            href="https://www.instagram.com/pufferbommy/"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline-gap group hover:cursor-pointer inline-block px-1 py-2 duration-300 hover:bg-opacity-50 dark:hover:bg-opacity-25 hover:bg-green-300 dark:hover:bg-green-800  rounded-md hover:underline"
-                        >
-                            <img
-                                className="ml-3 inline w-5 opacity-75"
-                                src="https://logosarchive.com/wp-content/uploads/2021/07/Instagram-logo-icon.png"
-                            />
-                            <span className="mx-3 group-hover:text-blue-600 dark:group-hover:text-blue-300 text-blue-400">
-                                @pufferbommy
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+const Content = () => {
+  const [isRotate, setIsRotate] = useState(false)
+  const space = <Fragment>&nbsp;&nbsp;&nbsp;&nbsp;</Fragment>
+  const handleClick = () => {
+    setIsRotate(!isRotate)
+  }
+  return (
+    <main className="mt-16 flex flex-col items-center">
+      <div className="flex flex-col gap-8 md:gap-6 max-w-md md:max-w-lg">
+        <div className="my-4">
+          <img
+            onClick={handleClick}
+            className={`${
+              isRotate
+                ? 'animate-spin'
+                : 'hover:scale-105 transition duration-300'
+            } w-1/2 mx-auto cursor-pointer`}
+            alt="Cat"
+            src={Cat}
+            draggable="false"
+          />
         </div>
-    )
-}
-
-Content.propTypes = {
-    nextTheme: PropTypes.string,
+        <div className="bg-gray-200 dark:bg-gray-800 rounded-lg py-4 px-10">
+          <h2 className="font-medium text-black dark:text-white text-center">
+            Hello, I'm a newbie developer based in Thailand!
+          </h2>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h2 className="text-black text-3xl mt-4 font-bold dark:text-white">
+            Panyawat Kaedpol
+          </h2>
+          <p className="text-black ml-5 dark:text-white text-sm">
+            I'm {new Date().getFullYear() - 2001} years old and you can call me
+            Bomb.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2">
+          <TopicHeading title="Bio" />
+          <div className="text-black dark:text-white leading-6 tracking-wider ml-4 text-sm mt-2">
+            <span className="flex gap-[1.15rem]">
+              <h1 className="font-semibold">2001</h1>
+              <p>Born in Yala, Thailand.</p>
+            </span>
+            <span className="flex gap-4">
+              <h1 className="font-semibold">2004</h1>
+              <p>Moved to Phatthalung, Thailand.</p>
+            </span>
+            <span className="flex gap-4">
+              <h1 className="font-semibold">2022</h1>
+              <p>I'm currenly in my third year studying computer science.</p>
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <TopicHeading title="Skills" />
+          <div className="text-black dark:text-white leading-6 ml-4 tracking-wider text-sm mt-2">
+            <div>
+              <h1 className="font-semibold inline">Languages: </h1>
+              <span className="capitalize">
+                Javascript, html, css, java, c++
+              </span>
+            </div>
+            <div>
+              <h1 className="font-semibold inline">Libraries & Frameworks: </h1>
+              <span className="capitalize">React, express, tailwind</span>
+            </div>
+            <div>
+              <h1 className="font-semibold inline">Tools: </h1>
+              <span className="capitalize">
+                Vscode, git & github, command line, adobe photoshop, figma
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <TopicHeading title="I ♥" />
+          <p className="text-black dark:text-white leading-6 tracking-wider capitalize text-sm mt-2">
+            {space}Coding, music, art, singing, learning, travelling
+          </p>
+        </div>
+        <div className="flex flex-col gap-2">
+          <TopicHeading title="On the web" />
+          <div>
+            <SocialItem
+              icon={<RiGithubFill />}
+              destination="https://github.com/pufferbommy"
+              name="@pufferbommy"
+            />
+            <SocialItem
+              icon={<RiTwitterFill />}
+              destination="https://twitter.com/pufferbommy"
+              name="@pufferbommy"
+            />
+            <SocialItem
+              icon={<RiInstagramFill />}
+              destination="https://www.instagram.com/pufferbommy"
+              name="@pufferbommy"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+  )
 }
 
 export default Content
