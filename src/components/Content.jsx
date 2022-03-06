@@ -1,7 +1,7 @@
 import { RiGithubFill, RiTwitterFill, RiInstagramFill } from 'react-icons/ri'
 import SocialItem from './SocialItem'
 import TopicHeading from './TopicHeading'
-import { Fragment, useState } from 'react'
+import { useState, lazy } from 'react'
 import Cat from '../images/cat.png'
 
 const Content = () => {
@@ -10,7 +10,7 @@ const Content = () => {
     setIsRotate(!isRotate)
   }
   return (
-    <main className="mt-16 flex flex-col gap-8 px-4 md:px-0 md:gap-6 max-w-md md:max-w-lg mx-auto">
+    <main className="mt-16 flex flex-col gap-8 px-4 sm:px-0 md:gap-6 max-w-md md:max-w-lg mx-auto">
       <div className="my-4">
         <img
           onClick={handleClick}
@@ -30,10 +30,10 @@ const Content = () => {
         </h2>
       </div>
       <div className="flex flex-col gap-2">
-        <h2 className="text-black text-3xl mt-4 font-bold dark:text-white">
+        <h2 className="text-black text-3xl mt-4 text-center xs:text-left font-bold dark:text-white">
           Panyawat Kaedpol
         </h2>
-        <p className="text-black ml-0 sm:ml-4 dark:text-white text-sm">
+        <p className="text-black ml-0 sm:ml-4 text-center xs:text-left dark:text-white text-sm">
           I'm {new Date().getFullYear() - 2001} years old and you can call me
           Bomb.
         </p>
@@ -41,15 +41,15 @@ const Content = () => {
       <div className="flex flex-col gap-2">
         <TopicHeading title="Bio" />
         <div className="text-black dark:text-white leading-6 tracking-wider ml-0 sm:ml-4 text-sm mt-2">
-          <span className="flex gap-[1.15rem]">
+          <span className="flex flex-col xs:flex-row xs:gap-4">
             <h1 className="font-semibold">2001</h1>
             <p>Born in Yala, Thailand.</p>
           </span>
-          <span className="flex gap-4">
+          <span className="flex flex-col my-4 xs:my-0 xs:flex-row xs:gap-4">
             <h1 className="font-semibold">2004</h1>
             <p>Moved to Phatthalung, Thailand.</p>
           </span>
-          <span className="flex gap-4">
+          <span className="flex flex-col xs:flex-row xs:gap-4">
             <h1 className="font-semibold">2022</h1>
             <p>I'm currenly in my third year studying computer science.</p>
           </span>
@@ -58,27 +58,65 @@ const Content = () => {
       <div className="flex flex-col gap-2">
         <TopicHeading title="Skills" />
         <div className="text-black dark:text-white leading-6 ml-0 sm:ml-4 tracking-wider text-sm mt-2">
-          <div>
+          <div className="hidden xs:block">
             <h1 className="font-semibold inline">Languages: </h1>
             <span className="capitalize">Javascript, html, css, java, c++</span>
           </div>
-          <div>
+          <div className="block xs:hidden">
+            <h1 className="font-semibold inline">Languages</h1>
+            <ul className="list-disc capitalize ml-4">
+              <li>Javascript</li>
+              <li>html</li>
+              <li>css</li>
+              <li>java</li>
+              <li>c++</li>
+            </ul>
+          </div>
+          <div className="hidden xs:block">
             <h1 className="font-semibold inline">Libraries & Frameworks: </h1>
             <span className="capitalize">React, express, tailwind</span>
           </div>
-          <div>
+          <div className="block xs:hidden my-4">
+            <h1 className="font-semibold inline">Libraries & Frameworks</h1>
+            <ul className="list-disc ml-4">
+              <li>React</li>
+              <li>Express</li>
+              <li>Tailwind</li>
+            </ul>
+          </div>
+          <div className="hidden xs:block">
             <h1 className="font-semibold inline">Tools: </h1>
             <span className="capitalize">
               Vscode, git & github, command line, adobe photoshop, figma
             </span>
           </div>
+          <div className="block xs:hidden">
+            <h1 className="font-semibold inline">Tools</h1>
+            <ul className="list-disc capitalize ml-4">
+              <li>Vscode</li>
+              <li>git & github</li>
+              <li>command line</li>
+              <li>adobe photoshop</li>
+              <li>figma</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <TopicHeading title="I ♥" />
-        <p className="text-black ml-0 sm:ml-4 dark:text-white leading-6 tracking-wider capitalize text-sm mt-2">
+        <p className="text-black hidden xs:block ml-0 sm:ml-4 dark:text-white leading-6 tracking-wider capitalize text-sm mt-2">
           Coding, music, art, singing, learning, travelling
         </p>
+        <div className="block xs:hidden">
+          <ul className="list-disc capitalize ml-4 text-black dark:text-white leading-6">
+            <li>Coding</li>
+            <li>music</li>
+            <li>art</li>
+            <li>singing</li>
+            <li>learning</li>
+            <li>travelling</li>
+          </ul>
+        </div>
       </div>
       <div className="flex flex-col gap-2">
         <TopicHeading title="On the web" />
