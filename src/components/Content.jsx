@@ -88,17 +88,17 @@ const Content = () => {
           <TopicHeading title="On the web" />
           <div>
             <SocialItem
-              icon={<RiGithubFill />}
+              icon={<RiGithubFill size="1.25rem" />}
               destination="https://github.com/pufferbommy"
               name="@pufferbommy"
             />
             <SocialItem
-              icon={<RiTwitterFill />}
+              icon={<RiTwitterFill size="1.25rem" />}
               destination="https://twitter.com/pufferbommy"
               name="@pufferbommy"
             />
             <SocialItem
-              icon={<RiInstagramFill />}
+              icon={<RiInstagramFill size="1.25rem" />}
               destination="https://www.instagram.com/pufferbommy"
               name="@pufferbommy"
             />
