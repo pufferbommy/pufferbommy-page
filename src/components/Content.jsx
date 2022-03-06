@@ -3,7 +3,6 @@ import SocialItem from './SocialItem'
 import TopicHeading from './TopicHeading'
 import { Fragment, useState } from 'react'
 import Cat from '../images/cat.png'
-import { motion } from 'framer-motion'
 
 const Content = () => {
   const [isRotate, setIsRotate] = useState(false)
