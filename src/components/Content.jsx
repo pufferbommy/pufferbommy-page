@@ -38,7 +38,7 @@ const Content = () => {
           Bomb.
         </p>
       </div>
-      <div className="flex flex-col gap-2">
+      <div name="bio" className="flex flex-col gap-2">
         <TopicHeading title="Bio" />
         <div className="text-black dark:text-white leading-6 tracking-wider ml-0 sm:ml-4 text-sm mt-2">
           <span className="flex flex-col xs:flex-row xs:gap-4">
@@ -55,7 +55,7 @@ const Content = () => {
           </span>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
+      <div name="skills" className="flex flex-col gap-2">
         <TopicHeading title="Skills" />
         <div className="text-black dark:text-white leading-6 ml-0 sm:ml-4 tracking-wider text-sm mt-2">
           <div className="hidden xs:block">
@@ -102,7 +102,7 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
+      <div name="iLove" className="flex flex-col gap-2">
         <TopicHeading title="I ♥" />
         <p className="text-black hidden xs:block ml-0 sm:ml-4 dark:text-white leading-6 tracking-wider capitalize text-sm mt-2">
           Coding, music, art, singing, learning, travelling
@@ -118,7 +118,7 @@ const Content = () => {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
+      <div name="onTheWeb" className="flex flex-col gap-2">
         <TopicHeading title="On the web" />
         <div>
           <SocialItem
