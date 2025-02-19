@@ -17,7 +17,7 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 			A frontend developer who is passionate about building user-friendly, interactive web experiences.
 		</h1>
 		<div class="buttons">
-			<a class="nes-btn" href="https://pufferbommy.github.io/til/">TIL</a>
+			<a class="nes-btn" target="_blank" href="https://pufferbommy.github.io/til/">TIL</a>
 			<button class="nes-btn" id="contact-button">CONTACT</button>
 		</div>
 	</section>
@@ -86,14 +86,12 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 		}
 	}
 
-
-
 	.projects {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(100%, 450px), 1fr));
 		gap: 1rem;
 
-		.project {
+		.project { 
 			position: relative;
 			aspect-ratio: 1 / 1;
 
@@ -130,6 +128,30 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 				background: linear-gradient(to bottom, hsla(270, 10%, 4%, 0) 0%, hsla(270, 10%, 4%, 0.75) 100%);
 				opacity: 0;
 				transition: opacity 250ms;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		.hero-section {
+			align-items: center;
+			text-align: center;
+
+			.buttons {
+				flex-direction: column;
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 800px) {
+		.projects .project {
+			h2 {
+				opacity: 1;
+			}
+
+			&:before {
+				opacity: 1;
 			}
 		}
 	}
