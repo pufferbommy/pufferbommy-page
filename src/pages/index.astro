@@ -9,78 +9,56 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 ---
 
 <Layout>
-	<div class="main-wrapper">
-		<main class="container">
-			<section class="hero-section">
-				<p class="gradient-text">Hello,</p>
-				<h1>
-					I'm Panyawat Kaedpol - a Frontend developer
-					<br>
-					Crafting user-friendly, interactive web experiences.
-				</h1>
-				<div class="buttons">
-					<a class="nes-btn" href="til">TIL</a>
-					<a class="nes-btn" href="#contact">CONTACT</a>
-				</div>
-			</section>
-			<section>
-				<div class="projects">
-					<div class="project nes-container is-dark is-rounded">
-						<h2>Cat Maps</h2>
-						<Image src={catMapsImage} alt="cat maps" />
-					</div>
-					<div class="project nes-container is-dark is-rounded">
-						<h2>Graduate Project</h2>
-						<Image src={graduateProjectImage} alt="graduate project" />
-					</div>
-					<div class="project nes-container is-dark is-rounded">
-						<h2>Nichakarn Port</h2>
-						<Image src={nichakarnPortImage} alt="nichakarn-port" />
-					</div>
-					<div class="project nes-container is-dark is-rounded">
-						<h2>Quarantine Checker</h2>
-						<Image src={quarantineCheckerImage} alt="quarantine checker" />
-					</div>
-					<a href="projects" class="nes-container is-dark is-rounded view-all">
-						VIEW ALL PROJECTS
-						<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-							<path d="M8 5v2h2V5H8zm4 4V7h-2v2h2zm2 2V9h-2v2h2zm0 2h2v-2h-2v2zm-2 2v-2h2v2h-2zm0 0h-2v2h2v-2zm-4 4v-2h2v2H8z" fill="currentColor"/>
-						</svg>
-					</a>
-				</div>
-			</section>
-		</main>	
-	</div>	
+	<section class="hero-section">
+		<p class="gradient-text">Hello,</p>
+		<h1>
+			I'm Panyawat Kaedpol
+			<br>
+			A frontend developer who is passionate about building user-friendly, interactive web experiences.
+		</h1>
+		<div class="buttons">
+			<a class="nes-btn" href="til">TIL</a>
+			<a class="nes-btn" href="#contact">CONTACT</a>
+		</div>
+	</section>
+	<section>
+		<div class="projects">
+			<div class="project nes-container is-dark is-rounded">
+				<h2>Cat Maps</h2>
+				<Image src={catMapsImage} alt="cat maps" />
+			</div>
+			<div class="project nes-container is-dark is-rounded">
+				<h2>Graduate Project</h2>
+				<Image src={graduateProjectImage} alt="graduate project" />
+			</div>
+			<div class="project nes-container is-dark is-rounded">
+				<h2>Nichakarn Port</h2>
+				<Image src={nichakarnPortImage} alt="nichakarn-port" />
+			</div>
+			<div class="project nes-container is-dark is-rounded">
+				<h2>Quarantine Checker</h2>
+				<Image src={quarantineCheckerImage} alt="quarantine checker" />
+			</div>
+		</div>
+	</section>
 </Layout>
 
 <style>
-	.main-wrapper {
-		padding-inline: 2rem;
-		position: relative;
-		z-index: 1;
-		background-color: inherit;
-		border-bottom-left-radius: 2rem;
-		border-bottom-right-radius: 2rem;
-	}
-
-	main {
-		min-height: calc(100dvh - 72px);
-	}
-
 	.hero-section {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-		padding-block: 4rem;
 		align-items: start;
+		justify-content: center;
+		min-height: 50vh;
+		padding-bottom: 4rem;
 
 		p {
-			font-size: 4rem;
+			font-size: clamp(3.5rem, 9vw , 4rem);
 		}
 
 		h1 {
-			font-size: 2rem;
-			font-weight: normal;
+			font-size: clamp(1.5rem, 3vw , 2rem);
 			line-height: 2;
 		}
 
@@ -90,11 +68,12 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 		}
 	}
 
+
+
 	.projects {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 450px), 1fr));
 		gap: 1rem;
-		padding-bottom: 4rem;
 
 		.project {
 			position: relative;
@@ -134,13 +113,6 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 				opacity: 0;
 				transition: opacity 250ms;
 			}
-		}
-
-		.view-all {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 0.5rem;
 		}
 	}
 </style>

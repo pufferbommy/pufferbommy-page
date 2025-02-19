@@ -1,6 +1,9 @@
 ---
 import 'nes.css/css/nes.min.css'
+import '@fontsource/press-start-2p';
 
+import '../styles/global.css'
+import '../styles/normalize.css'
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -13,50 +16,14 @@ import Footer from "../components/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Pufferbommy Page</title>
-		<!-- <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css"> -->
-		<link rel="stylesheet" href="/normalize.css">
-		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 	</head>
 	<body>
 		<Header />
-		<slot />
+		<div class="main-wrapper">
+      <main class="container">
+				<slot />
+			</main>
+		</div>
 		<Footer />
 	</body>
 </html>
-
-<style is:global>
-	body {
-		background-color: hsl(270, 10%, 4%);
-		color: #f1f1f1;
-	}
-	.container {
-		max-width: 1680px;
-		margin-inline: auto;
-	}
-	.gradient-text {
-		background: linear-gradient(to right, #9b8aff 25%, #bf60ff 50%, #ef38b5 75%, #f94040 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		animation: gradient 10s infinite;
-		background-size: 400% auto;
-		display: inline-block;
-	}
-	@keyframes gradient {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
-		}
-	}
-	a, a:hover {
-		color: inherit;
-	}
-	h1, h2, p {
-		margin-bottom: 0;
-		font-weight: normal;
-	}
-</style>
