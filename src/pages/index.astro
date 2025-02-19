@@ -17,8 +17,8 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 			A frontend developer who is passionate about building user-friendly, interactive web experiences.
 		</h1>
 		<div class="buttons">
-			<a class="nes-btn" href="til">TIL</a>
-			<a class="nes-btn" href="#contact">CONTACT</a>
+			<a class="nes-btn" href="https://pufferbommy.github.io/til/">TIL</a>
+			<button class="nes-btn" id="contact-button">CONTACT</button>
 		</div>
 	</section>
 	<section>
@@ -42,6 +42,24 @@ import quarantineCheckerImage from '../assets/quarantine-checker.jpg';
 		</div>
 	</section>
 </Layout>
+
+<script>
+	const scrollToContact = () => {
+		window.scrollTo({
+			top: document.body.scrollHeight,
+			behavior: "smooth"
+		})
+	}
+
+	document.addEventListener("DOMContentLoaded", () => {
+		if (window.location.hash === "#contact") scrollToContact()
+	});
+
+	document.getElementById("contact-button")?.addEventListener("click", () => {
+		window.location.hash = "contact"
+		scrollToContact()
+	});
+</script>
 
 <style>
 	.hero-section {
