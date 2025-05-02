@@ -27,6 +27,7 @@ const formatedCurrentDate = new Intl.DateTimeFormat('en-US', {
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css">
 	</head>
 	<body>
 		<time id="current-date-time">{formatedCurrentDate}</time>
@@ -183,6 +184,12 @@ const formatedCurrentDate = new Intl.DateTimeFormat('en-US', {
 
 <script>
 	import Zoom from 'smooth-zoom'
+	import Lenis from 'lenis'
+
+	// Initialize Lenis for smooth scrolling
+	new Lenis({
+		autoRaf: true,
+	});
 
 	Zoom("img");
 
