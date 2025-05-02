@@ -81,11 +81,6 @@ const formatedCurrentDate = new Intl.DateTimeFormat('en-US', {
 		transition: border-radius 4000ms;
 	}
 
-	/* Remove border radius when image is zoomed */
-	.zoom-img {
-		border-radius: 0;
-	}
-
 	.container-wrapper {
 		padding-inline: 5%;
 	}
@@ -180,10 +175,23 @@ const formatedCurrentDate = new Intl.DateTimeFormat('en-US', {
 		filter: grayscale(0);
 		transform: rotate(0);
 	}
+
+	.medium-zoom-overlay {
+		background-color: var(--color-background) !important;
+	}
+
+	.medium-zoom-overlay,
+	.medium-zoom-image--opened {
+		z-index: 999;
+	}
+
+	.medium-zoom-image--opened {
+		border-radius: 0;
+	}
 </style>
 
 <script>
-	import Zoom from 'smooth-zoom'
+	import mediumZoom from 'medium-zoom'	
 	import Lenis from 'lenis'
 
 	// Initialize Lenis for smooth scrolling
@@ -191,7 +199,7 @@ const formatedCurrentDate = new Intl.DateTimeFormat('en-US', {
 		autoRaf: true,
 	});
 
-	Zoom("img");
+	mediumZoom("img");
 
 	setInterval(() => {
 		const currentDate = new Date()
