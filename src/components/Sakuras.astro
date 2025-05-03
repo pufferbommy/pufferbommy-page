@@ -45,9 +45,12 @@
 <script>
   import gsap from 'gsap'
 
-  document.getElementById("sakuras")!.style.height = `${document.body.scrollHeight}px`
+  const sakuras = document.getElementById("sakuras");
+  if(sakuras) {
+    sakuras.style.height = `${document.body.scrollHeight}px`
+  }
 
-  const addSakura = () => {
+  const createSakura = () => {
     const sakura = document.createElement("div")
     sakura.className = "sakura"
     sakura.innerHTML = `<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" class="pixelicon-sakura sakura-inner">
@@ -58,35 +61,66 @@
       <rect fill="#FFAEB0" x="4" y="5" width="1" height="1"/>
       <rect fill="#FFFBD4" x="4" y="4" width="1" height="1"/>
       </svg>`
-    document.getElementById('sakuras')?.appendChild(sakura)
-    const min = 0
-    const max = window.innerWidth
-    const startLeft = Math.floor(Math.random() * (max - min + 1)) + min
-    const tl = gsap.timeline({
-      onComplete: () => {
-        sakura.remove()
-      }
-    })
-    tl.to(sakura, {
-      left: startLeft,
-      top: -32,
-      duration: 0,
-    }).to(sakura, {
-      top: document.getElementById('sakuras')?.scrollHeight,
-      duration: 20,
-      ease: "none"
-    })
+    return sakura
+    // document.getElementById('sakuras')?.appendChild(sakura)
+    // const min = 0
+    // const max = window.innerWidth
+    // const startLeft = Math.floor(Math.random() * (max - min + 1)) + min
+    // const tl = gsap.timeline({
+    //   onComplete: () => {
+    //     sakura.remove()
+    //   }
+    // })
+    // tl.to(sakura, {
+    //   left: startLeft,
+    //   top: -32,
+    //   duration: 0,
+    // }).to(sakura, {
+    //   top: document.getElementById('sakuras')?.scrollHeight,
+    //   duration: 20,
+    //   ease: "none"
+    // })
   }
-  for(let i = 0; i <= 2; i++) {
-    setTimeout(() => {
-      addSakura()
-    }, i * Math.floor(Math.random() * 1001))
-  }
-  setInterval(() => {
-    for(let i = 0; i <= 2; i++) {
+
+  const animateSakura = (sakura: HTMLDivElement) => {
+    const startLeft = Math.random() * window.innerWidth;
+
+    const animationTimeline = gsap.timeline({
+      onComplete: () => sakura.remove(),
+    });
+
+    animationTimeline
+      .to(sakura, {
+        left: startLeft,
+        top: -32,
+        duration: 0,
+      })
+      .to(sakura, {
+        top: sakuras!.scrollHeight,
+        duration: 20,
+        ease: "none",
+      });
+  };
+
+  const addSakura = () => {
+    const sakura = createSakura();
+    sakuras?.appendChild(sakura);
+    animateSakura(sakura);
+  };
+
+  const spawnSakuras = (count = 3) => {
+    for (let i = 0; i < count; i++) {
       setTimeout(() => {
-        addSakura()
-      }, i * Math.floor(Math.random() * 1001))
+        if (document.visibilityState === "visible") {
+          addSakura();
+        }
+      }, i * Math.random() * 1000);
     }
-  }, 3000)
+  };
+
+  // Initial sakura spawn
+  spawnSakuras();
+
+  // Continuous spawning every 3 seconds
+  setInterval(() => spawnSakuras(), 3000);
 </script>
