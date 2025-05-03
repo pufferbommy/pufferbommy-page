@@ -6,6 +6,7 @@ import Experience from '../components/Experience.astro'
 import SideProjects from '../components/SideProjects.astro'
 import RunningCat from '../components/RunningCat.astro'
 import Footer from '../components/Footer.astro'
+import CurrentDateTime from '../components/CurrentDateTime.astro'
 ---
 
 <html lang="en">
@@ -26,7 +27,7 @@ import Footer from '../components/Footer.astro'
 	</head>
 	<body>
 		<Sakuras />
-		<time id="current-date-time"></time>
+		<CurrentDateTime />
 		<div class="container-wrapper">
 			<main class="container">
 				<Introduction />
@@ -41,15 +42,6 @@ import Footer from '../components/Footer.astro'
 </html>
 
 <style is:global>
-	#current-date-time {
-		position: fixed;
-		color: var(--color-muted);
-		top: 1rem;
-		right: 1rem;
-		font-size: var(--text-sm);
-		font-family: monospace;
-	}
-
 	:root {
 		--text-sm: 0.875rem;
 		--text-base: 1rem;
@@ -195,20 +187,4 @@ import Footer from '../components/Footer.astro'
 	});
 
 	mediumZoom("img");
-
-	const currentDate = new Date()
-	document.getElementById("current-date-time")!.innerText = new Intl.DateTimeFormat('en-US', {
-		dateStyle: "medium",
-		timeStyle: "medium",
-		hour12: false
-	}).format(currentDate)
-
-	setInterval(() => {
-		const currentDate = new Date()
-		document.getElementById("current-date-time")!.innerText = new Intl.DateTimeFormat('en-US', {
-			dateStyle: "medium",
-			timeStyle: "medium",
-			hour12: false
-		}).format(currentDate)
-	}, 1000)
 </script>

@@ -1,0 +1,30 @@
+<time id="current-date-time"></time>
+
+<style>
+  #current-date-time {
+		position: fixed;
+		color: var(--color-muted);
+		top: 1rem;
+		right: 1rem;
+		font-size: var(--text-sm);
+		font-family: monospace;
+	}
+</style>
+
+<script>
+  const currentDate = new Date()
+	document.getElementById("current-date-time")!.innerText = new Intl.DateTimeFormat('en-US', {
+		dateStyle: "medium",
+		timeStyle: "medium",
+		hour12: false
+	}).format(currentDate)
+
+	setInterval(() => {
+		const currentDate = new Date()
+		document.getElementById("current-date-time")!.innerText = new Intl.DateTimeFormat('en-US', {
+			dateStyle: "medium",
+			timeStyle: "medium",
+			hour12: false
+		}).format(currentDate)
+	}, 1000)
+</script>
