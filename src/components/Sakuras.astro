@@ -1,0 +1,81 @@
+<style is:global>
+  .sakura {
+    position: absolute;
+    display: inline-flex;
+    animation: sakura-shake 6s infinite alternate;
+    top: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  .sakura-inner {
+    animation: turn 3s infinite linear;
+  }
+
+  @keyframes sakura-shake {
+    0% {
+      transform: translateX(-4rem);
+    }
+    100% {
+      transform: translateX(4rem);
+    }
+  }
+
+  @keyframes turn {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  import gsap from 'gsap'
+
+  const addSakura = () => {
+    const sakura = document.createElement("div")
+    sakura.className = "sakura"
+    sakura.innerHTML = `<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" class="pixelicon-sakura sakura-inner">
+      <path fill="#FFD6D7" d="M3,8H5V7H6V6H8V4H7V3H6V1H4V2H3V3H1V5H2V6H3z M4,5H3V4H4V3H5V4H6V5H5V6H4z"/>
+      <rect fill="#FFAEB0" x="4" y="3" width="1" height="1"/>
+      <rect fill="#FFAEB0" x="3" y="4" width="1" height="1"/>
+      <rect fill="#FFAEB0" x="5" y="4" width="1" height="1"/>
+      <rect fill="#FFAEB0" x="4" y="5" width="1" height="1"/>
+      <rect fill="#FFFBD4" x="4" y="4" width="1" height="1"/>
+      </svg>`
+    document.body.appendChild(sakura)
+    const min = 32
+    const max = window.innerWidth
+    const startLeft = Math.floor(Math.random() * (max - min + 1)) + min
+    const tl = gsap.timeline({
+      onComplete: () => {
+        sakura.remove()
+      }
+    })
+    tl.to(sakura, {
+      left: startLeft,
+      top: -32,
+      duration: 0,
+    }).to(sakura, {
+      top: document.body.scrollHeight,
+      duration: 20,
+      ease: "none"
+    })
+  }
+  for(let i = 0; i <= 2; i++) {
+    setTimeout(() => {
+      addSakura()
+    }, i * Math.floor(Math.random() * 1001))
+  }
+  setInterval(() => {
+    for(let i = 0; i <= 2; i++) {
+      setTimeout(() => {
+        addSakura()
+      }, i * Math.floor(Math.random() * 1001))
+    }
+  }, 3000)
+</script>

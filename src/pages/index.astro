@@ -1,4 +1,5 @@
 ---
+import Sakuras from '../components/Sakuras.astro'
 import Introduction from '../components/Introduction.astro'
 import ILove from '../components/ILove.astro'
 import Experience from '../components/Experience.astro'
@@ -24,6 +25,7 @@ import Footer from '../components/Footer.astro'
 		<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.1/dist/lenis.css">
 	</head>
 	<body>
+		<Sakuras />
 		<time id="current-date-time"></time>
 		<div class="container-wrapper">
 			<main class="container">
@@ -66,6 +68,7 @@ import Footer from '../components/Footer.astro'
 		line-height: 1.5;
 		background-color: var(--color-background);
 		color: var(--color-foreground);
+		overflow: hidden;
 	}
 
 	img {
